@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon -e ts  --exec",
     "build": "rimraf dist && tsc",
-    "start": "NODE_ENV=production node .",
+    "start": "npm run build && NODE_ENV=production node .",
     "format": "prettier . --write",
     "lint": "eslint . --ext .ts --fix",
     "pre-commit": "lint-staged",
@@ -15,7 +15,8 @@
     "migrate": "npx ts-node-dev --transpile-only ./node_modules/typeorm/cli.js migration:run",
     "migrate:revert": "npm run typeorm -- migration:revert",
     "db:seed": "npx ts-node-dev ./node_modules/typeorm-seeding/dist/cli.js seed",
-    "test": "jest"
+    "test": "jest",
+    "start-dev:migrate:seed": "npm run migrate && npm run db:seed && npm run dev"
   },
   "jest": {
     "verbose": true
@@ -51,6 +52,7 @@
     "lint-staged": "^11.1.2",
     "nodemon": "^2.0.12",
     "prettier": "2.4.0",
+    "ts-node-dev": "^1.1.8",
     "typescript": "^4.4.3"
   },
   "dependencies": {

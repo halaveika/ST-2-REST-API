@@ -2,12 +2,13 @@ import "reflect-metadata";
 import dotenv from "dotenv";
 import { createConnection } from "typeorm";
 import { dbConfig } from "./config/dbconfig";
+import { dbConfigDocker } from "./config/dbconfigDocker";
 import App from "./app";
 import { loggerError } from "./utils/loggerConfig";
 
 dotenv.config();
 
-createConnection(dbConfig)
+createConnection(process.env.DOCKER_RUN === "true" ? dbConfigDocker : dbConfig)
   .then(async dbConnection => {
     console.log("DB was Connected");
     const app = new App(dbConnection);

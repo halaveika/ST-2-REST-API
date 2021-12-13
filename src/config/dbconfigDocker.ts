@@ -5,7 +5,7 @@ import { User } from "../db/entity/user";
 
 dotenv.config();
 
-export const dbConfig: ConnectionOptions = {
+export const dbConfigDocker: ConnectionOptions = {
   type: "postgres",
   host: process.env.TYPEORM_HOST,
   port: Number(process.env.TYPEORM_PORT),
@@ -16,10 +16,4 @@ export const dbConfig: ConnectionOptions = {
   migrationsRun: true,
   logging: false,
   entities: [User, Group],
-  extra: {
-    ssl: {
-      require: process.env.TYPEORM_SSL === "true" ? true : false,
-      rejectUnauthorized: false,
-    },
-  },
 };
