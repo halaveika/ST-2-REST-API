@@ -1,8 +1,11 @@
 # ST-2-REST-API
 
+# Deploy
+https://st-2-rest-api-halaveika.herokuapp.com/
+
 # Endpoints:
 
-## 1. http://localhost:5000/users
+## 1. https://st-2-rest-api-halaveika.herokuapp.com/users
 
 <details><summary>POST</summary>
  you need to send in your request:
@@ -20,25 +23,25 @@ body = {
 limit={number}, by default limit = 10  
 loginSubstring={string}  
 totally looks like:  
-http://localhost:5000/users?loginSubstring={string}&limit={number}  
+https://st-2-rest-api-halaveika.herokuapp.com/users?loginSubstring={string}&limit={number}  
 you can also use just one of this parameter,  
 but if no one use, by default return users without sort, but maximum 10
 
  </details>
 
-## 2. http://localhost:3000/users/:{userId}
+## 2. https://st-2-rest-api-halaveika.herokuapp.com/users/:{userId}
 
  <details><summary>GET</summary>
 
 totally looks like:  
- http://localhost:5000/users/:{userId}  
+https://st-2-rest-api-halaveika.herokuapp.com/users/:{userId}  
  if doesn't have this user or something wrong you will get message
 
  </details>
  <details><summary>DELETE</summary>
   
  totally looks like:  
- http://localhost:5000/users/:{userId}  
+https://st-2-rest-api-halaveika.herokuapp.com/users/:{userId}  
  Make sofr delete users by id
  if doesn't have this user or this user already deleted you will get message
 
@@ -46,7 +49,7 @@ totally looks like:
  <details><summary>PUT</summary>
   
  totally looks like:  
- http://localhost:5000/users/:{userId}  
+ https://st-2-rest-api-halaveika.herokuapp.com/users/:{userId}  
  you need to send in your request:
 
 body = {  
@@ -60,7 +63,7 @@ also, if user already deleted, or doesn't exist, you can change nothing and will
 
  </details>
 
-## 3. http://localhost:5000/groups
+## 3. https://st-2-rest-api-halaveika.herokuapp.com/groups
 
 <details><summary>POST</summary>
  you need to send in your request:
@@ -79,13 +82,13 @@ type Permission = 'READ' | 'WRITE' | 'DELETE' | 'SHARE' | 'UPLOAD_FILES';
 
  </details>
 
-## 4. http://localhost:5000/groups/:{groupId}
+## 4. https://st-2-rest-api-halaveika.herokuapp.com/groups/:{groupId}
 
  <details><summary>GET</summary>
 
 you just need to add in your path id of group
 totally looks like:  
- http://localhost:5000/groups/:{groupId}  
+ https://st-2-rest-api-halaveika.herokuapp.com/groups/:{groupId}  
  if doesn't have this group or something wrong you will get message
 
  </details>
@@ -94,7 +97,7 @@ totally looks like:
  add group ID to the end of string  
   
  totally looks like:  
- http://localhost:5000/groups/:{groupId}  
+ https://st-2-rest-api-halaveika.herokuapp.com/groups/:{groupId}  
  if doesn't have this group or this user already deleted you will get message
 
  </details>
@@ -103,7 +106,7 @@ totally looks like:
 add user ID to the end of string
 
 totally looks like:  
- http://localhost:5000/groups/:{groupId}  
+ https://st-2-rest-api-halaveika.herokuapp.com/groups/:{groupId}  
 you need to send in your request:
 
 body = {  
@@ -115,7 +118,7 @@ type Permission = 'READ' | 'WRITE' | 'DELETE' | 'SHARE' | 'UPLOAD_FILES';
 
  </details>
 
-## 5. http://localhost:5000/groups/:{groupId}
+## 5. https://st-2-rest-api-halaveika.herokuapp.com/groups/:{groupId}
 
 <details><summary>PUT (addUsersToGroup(groupId, userIds))</summary>
 
@@ -136,7 +139,7 @@ body = {
 
 </details>
 
-## 6. http://localhost:5000/login
+## 6. https://st-2-rest-api-halaveika.herokuapp.com/login
 
 <details><summary>POST</summary>
 
