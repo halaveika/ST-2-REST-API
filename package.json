@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon -e ts  --exec",
     "build": "rimraf dist && tsc",
-    "start": "npm run build && NODE_ENV=production node .",
+    "start": "NODE_ENV=production node .",
     "format": "prettier . --write",
     "lint": "eslint . --ext .ts --fix",
     "pre-commit": "lint-staged",
@@ -17,7 +17,7 @@
     "db:seed": "npx ts-node-dev ./node_modules/typeorm-seeding/dist/cli.js seed",
     "test": "jest",
     "start-dev:migrate:seed": "npm run migrate && npm run db:seed && npm run dev",
-    "deploy": "git add . && git commit -m Heroku && git push heroku master"
+    "deploy": "git add . && git commit -m Heroku && git push heroku main"
   },
   "jest": {
     "verbose": true
@@ -72,5 +72,8 @@
     "typeorm-seeding": "^1.6.1",
     "uuid": "^8.3.2",
     "winston": "^3.3.3"
+  },
+  "engines": {
+    "node": "16.13.0"
   }
 }
