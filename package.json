@@ -16,7 +16,8 @@
     "migrate:revert": "npm run typeorm -- migration:revert",
     "db:seed": "npx ts-node-dev ./node_modules/typeorm-seeding/dist/cli.js seed",
     "test": "jest",
-    "start-dev:migrate:seed": "npm run migrate && npm run db:seed && npm run dev"
+    "start-dev:migrate:seed": "npm run migrate && npm run db:seed && npm run dev",
+    "deploy": "git add . && git commit -m Heroku && git push heroku master"
   },
   "jest": {
     "verbose": true
